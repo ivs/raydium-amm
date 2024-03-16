@@ -1005,6 +1005,7 @@ pub fn swap_base_in(
     amm_pool: &Pubkey,
     amm_authority: &Pubkey,
     amm_open_orders: &Pubkey,
+    amm_target_orders: &Pubkey,
     amm_coin_vault: &Pubkey,
     amm_pc_vault: &Pubkey,
     market_program: &Pubkey,
@@ -1035,7 +1036,7 @@ pub fn swap_base_in(
         AccountMeta::new(*amm_pool, false),
         AccountMeta::new_readonly(*amm_authority, false),
         AccountMeta::new(*amm_open_orders, false),
-        // AccountMeta::new(*amm_target_orders, false),
+        AccountMeta::new(*amm_target_orders, false),
         AccountMeta::new(*amm_coin_vault, false),
         AccountMeta::new(*amm_pc_vault, false),
         // market
